@@ -1,0 +1,33 @@
+[2024-12-10T19:14:11.008+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-10T19:14:11.079+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline.get_matrices manual__2024-12-10T19:12:44.193340+00:00 [queued]>
+[2024-12-10T19:14:11.121+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline.get_matrices manual__2024-12-10T19:12:44.193340+00:00 [queued]>
+[2024-12-10T19:14:11.122+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-12-10T19:14:11.209+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): get_matrices> on 2024-12-10 19:12:44.193340+00:00
+[2024-12-10T19:14:11.234+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'ml_pipeline', 'get_matrices', 'manual__2024-12-10T19:12:44.193340+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/mlops.py', '--cfg-path', '/tmp/tmp8eur9i3e']
+[2024-12-10T19:14:11.236+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=500) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-12-10T19:14:11.238+0000] {standard_task_runner.py:105} INFO - Job 81: Subtask get_matrices
+[2024-12-10T19:14:11.239+0000] {standard_task_runner.py:72} INFO - Started process 517 to run task
+[2024-12-10T19:14:11.416+0000] {task_command.py:467} INFO - Running <TaskInstance: ml_pipeline.get_matrices manual__2024-12-10T19:12:44.193340+00:00 [running]> on host 15e8047cfc54
+[2024-12-10T19:14:11.698+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_pipeline' AIRFLOW_CTX_TASK_ID='get_matrices' AIRFLOW_CTX_EXECUTION_DATE='2024-12-10T19:12:44.193340+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-10T19:12:44.193340+00:00'
+[2024-12-10T19:14:11.701+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-10T19:14:11.748+0000] {logging_mixin.py:190} INFO - ---Inside get_matrices----
+[2024-12-10T19:14:11.818+0000] {logging_mixin.py:190} INFO - 
+Model Metrics:
+[2024-12-10T19:14:11.820+0000] {logging_mixin.py:190} INFO -  {'accuracy': 0.9333333333333333, 'precision': 0.9333333333333333, 'recall': 0.9333333333333333, 'entropy': 0.18197787854694944}
+[2024-12-10T19:14:11.836+0000] {logging_mixin.py:190} INFO - 
+Classification Report:
+[2024-12-10T19:14:11.837+0000] {logging_mixin.py:190} INFO -                   precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00        15
+Iris-versicolor       0.88      0.93      0.90        15
+ Iris-virginica       0.93      0.87      0.90        15
+
+       accuracy                           0.93        45
+      macro avg       0.93      0.93      0.93        45
+   weighted avg       0.93      0.93      0.93        45
+[2024-12-10T19:14:11.839+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-10T19:14:11.879+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-10T19:14:11.881+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ml_pipeline, task_id=get_matrices, run_id=manual__2024-12-10T19:12:44.193340+00:00, execution_date=20241210T191244, start_date=20241210T191411, end_date=20241210T191411
+[2024-12-10T19:14:12.062+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-10T19:14:12.147+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-12-10T19:14:12.154+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

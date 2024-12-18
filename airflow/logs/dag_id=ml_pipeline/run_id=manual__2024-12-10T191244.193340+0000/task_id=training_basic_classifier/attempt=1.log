@@ -1,0 +1,21 @@
+[2024-12-10T19:13:27.003+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-12-10T19:13:27.058+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline.training_basic_classifier manual__2024-12-10T19:12:44.193340+00:00 [queued]>
+[2024-12-10T19:13:27.095+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline.training_basic_classifier manual__2024-12-10T19:12:44.193340+00:00 [queued]>
+[2024-12-10T19:13:27.096+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2024-12-10T19:13:27.198+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): training_basic_classifier> on 2024-12-10 19:12:44.193340+00:00
+[2024-12-10T19:13:27.220+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=433) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-12-10T19:13:27.220+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'ml_pipeline', 'training_basic_classifier', 'manual__2024-12-10T19:12:44.193340+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/mlops.py', '--cfg-path', '/tmp/tmpc6mvq_rd']
+[2024-12-10T19:13:27.224+0000] {standard_task_runner.py:72} INFO - Started process 450 to run task
+[2024-12-10T19:13:27.224+0000] {standard_task_runner.py:105} INFO - Job 78: Subtask training_basic_classifier
+[2024-12-10T19:13:27.613+0000] {task_command.py:467} INFO - Running <TaskInstance: ml_pipeline.training_basic_classifier manual__2024-12-10T19:12:44.193340+00:00 [running]> on host 15e8047cfc54
+[2024-12-10T19:13:27.869+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ml_pipeline' AIRFLOW_CTX_TASK_ID='training_basic_classifier' AIRFLOW_CTX_EXECUTION_DATE='2024-12-10T19:12:44.193340+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-10T19:12:44.193340+00:00'
+[2024-12-10T19:13:27.872+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-12-10T19:13:28.190+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/sklearn/linear_model/_logistic.py:1247 FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. From then on, it will always use 'multinomial'. Leave it to its default value to avoid this warning.
+[2024-12-10T19:13:28.340+0000] {logging_mixin.py:190} INFO - 
+Logistic Regression has been trained
+[2024-12-10T19:13:28.342+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-12-10T19:13:28.403+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-12-10T19:13:28.405+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=ml_pipeline, task_id=training_basic_classifier, run_id=manual__2024-12-10T19:12:44.193340+00:00, execution_date=20241210T191244, start_date=20241210T191327, end_date=20241210T191328
+[2024-12-10T19:13:28.572+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-12-10T19:13:28.688+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-12-10T19:13:28.708+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
